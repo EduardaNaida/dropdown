@@ -1,0 +1,121 @@
+.container {
+    position: relative;
+    width: 400px;
+    min-height: 40px;
+    background: #FFFFFF;
+    margin: 20px;
+}
+
+.selectedBlock {
+    display: -webkit-box;
+    border: 1px solid #C1C1C1;
+    border-radius: 10px;
+}
+
+.selectedItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.labelButton {
+    display: flex;
+    background: #F4F4F4;
+    border: none;
+    padding: 6px 12px;
+    margin: 7px 4px 9px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.labelButton:after{
+    display: flex;
+    padding-left: 10px;
+    font-size: 16px;
+    content: "\00d7";
+    cursor: pointer;
+}
+
+.btn {
+    position: absolute;
+    background: none;
+    border: solid #333333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+    right: 18px;
+    top: 18px;
+}
+
+.btnUp {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.btnDown {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.selectList {
+    margin-top: 8px;
+    box-shadow: 0 4px 32px rgba(51, 51, 51, 0.15);
+    border-radius: 12px;
+    display: none;
+}
+
+.searchInput {
+    background: #F4F4F4;
+    border-radius: 10px;
+    border: none;
+    margin: 16px 16px 0 16px;
+    padding: 10px;
+    width: 80%;
+}
+
+input.empty {
+    font-family: "FontAwesome", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+
+.options {
+    margin: 0;
+    padding: 0;
+    /*padding-left: 18px;*/
+    list-style: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.showOptions {
+    display: block;
+}
+
+.option {
+    display: flex;
+    padding: 18px 0 14px 0;
+    border-bottom: 1px solid #F4F4F4;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.flags {
+    border-radius: 4px;
+    margin: 0 10px 0 18px;
+    width: 21px;
+    height: 15px;
+}
+
+.checkBox {
+    /*flex-grow: 0;*/
+    /*float: right;*/
+}
