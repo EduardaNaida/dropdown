@@ -7,12 +7,14 @@
 }
 
 .selectedBlock {
-    display: -webkit-box;
+    display: flex;
+    justify-content: space-between;
     border: 1px solid #C1C1C1;
     border-radius: 10px;
+    align-items: center;
 }
 
-.selectedItem {
+.selectedItemBlock {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,7 +32,19 @@
     line-height: 12px;
 }
 
-.labelButton:after{
+.selectedOption {
+}
+
+/*.labelButton:after {*/
+/*    display: flex;*/
+/*    padding-left: 10px;*/
+/*    font-size: 16px;*/
+/*    content: "\00d7";*/
+/*    cursor: pointer;*/
+/*}*/
+
+.removeItem:after {
+    color: black;
     display: flex;
     padding-left: 10px;
     font-size: 16px;
@@ -39,15 +53,17 @@
 }
 
 .btn {
-    position: absolute;
+    display: inline-block;
+    position: relative;
+    justify-content: center;
+    width: 10px;
+    height: 5px;
     background: none;
     border: solid #333333;
     border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
+    padding: 4px;
+    margin: 0 17px 0 0;
     cursor: pointer;
-    right: 18px;
-    top: 18px;
 }
 
 .btnUp {
@@ -67,35 +83,39 @@
     display: none;
 }
 
+.showOptions {
+    display: block;
+}
+
+.searchInputBlock {
+    padding: 16px 16px 0 16px;
+}
+
 .searchInput {
+    box-sizing: border-box;
     background: #F4F4F4;
     border-radius: 10px;
     border: none;
-    margin: 16px 16px 0 16px;
     padding: 10px;
-    width: 80%;
+    width: 100%;
 }
 
-input.empty {
-    font-family: "FontAwesome", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-}
+/*input.empty {*/
+/*    font-family: "FontAwesome", sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*    text-decoration: inherit;*/
+/*}*/
 
 .options {
     margin: 0;
     padding: 0;
-    /*padding-left: 18px;*/
     list-style: none;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
 }
 
-.showOptions {
-    display: block;
-}
 
 .option {
     display: flex;
@@ -115,7 +135,50 @@ input.empty {
     height: 15px;
 }
 
-.checkBox {
-    /*flex-grow: 0;*/
-    /*float: right;*/
+.checkBoxBlock {
+    width: 100%;
+    box-sizing: border-box;
 }
+
+.checkBox {
+    float: right;
+    margin-right: 18px;
+    border-radius: 6px;
+    width: 24px;
+    height: 24px;
+
+    border: 2px solid #C1C1C1;
+
+    outline: none;
+    appearance: none;
+    background-color: #FFFFFF;
+}
+
+
+/*.checkmark {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    height: 25px;*/
+/*    width: 25px;*/
+/*    background-color: #b42222;*/
+
+/*    border-radius: 15px;*/
+/*}*/
+
+.checkBox:checked {
+    background-color: #005FFD;
+    border: 2px solid #0049D9;
+    appearance: auto;
+}
+
+/*.checkmark:after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    display: none;*/
+/*}*/
+
+/*!* Show the checkmark when checked *!*/
+/*.container input:checked ~ .checkmark:after {*/
+/*    display: block;*/
+/*}*/

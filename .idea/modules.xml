@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../social-network/.idea/-samurai-way.iml" filepath="$PROJECT_DIR$/../social-network/.idea/-samurai-way.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/dropdown.iml" filepath="$PROJECT_DIR$/.idea/dropdown.iml" />
     </modules>
   </component>
