@@ -25,11 +25,11 @@ export const MultiSelect: React.FC<SuperSelectPropsType> = ({options, onChangeOp
   }
 
   const selectItem = (option: MultiSelectType) => {
-    // if (selectedItem.includes(value)) {
-    //   setSelectedItem(selectedItem.filter(option => option !== value))
-    // }
-    onChangeOption([...value, option])
-    console.log(selectedItem)
+    if (value.includes(option)) {
+      onChangeOption([...value.filter(item => item.id !== option.id)])
+    } else {
+      onChangeOption([...value, option])
+    }
   }
 
   const mappedOption: any[] = value ? value.map((value, index) => (
@@ -77,14 +77,17 @@ export const MultiSelect: React.FC<SuperSelectPropsType> = ({options, onChangeOp
               <img className={style.flags} src={flag} alt="img"/>
               {state.label}
               <div className={style.checkBoxBlock}>
-                <input className={style.checkBox}
-                       type="checkbox"
-                       onChange={event => {
-                         selectItem(state)
-                       }}
-                       name="checkbox"
-                       value={state.id}/>
-                <span className={style.checkmark}></span>
+                <label className={style.label}>
+                  <input className={style.checkBox}
+                         type="checkbox"
+                         onChange={event => {
+                           selectItem(state)
+                         }}
+                         name="checkbox"
+                         id='checkbox1'
+                         value={state.id}/>
+                  <span className={style.checkmark}></span>
+                </label>
               </div>
             </li>)) : ''}
         </ul>

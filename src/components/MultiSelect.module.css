@@ -140,19 +140,25 @@
     box-sizing: border-box;
 }
 
-.checkBox {
-    float: right;
-    margin-right: 18px;
-    border-radius: 6px;
-    width: 24px;
-    height: 24px;
+/*.checkBox {*/
+/*    display: none;*/
+/*    -webkit-appearance: none;*/
+/*    position: absolute;*/
+/*}*/
 
-    border: 2px solid #C1C1C1;
+/*.checkBox {*/
+/*    float: right;*/
+/*    margin-right: 18px;*/
+/*    border-radius: 6px;*/
+/*    width: 24px;*/
+/*    height: 24px;*/
 
-    outline: none;
-    appearance: none;
-    background-color: #FFFFFF;
-}
+/*    border: 2px solid #C1C1C1;*/
+
+/*    outline: none;*/
+/*    appearance: none;*/
+/*    background-color: #FFFFFF;*/
+/*}*/
 
 
 /*.checkmark {*/
@@ -166,19 +172,64 @@
 /*    border-radius: 15px;*/
 /*}*/
 
-.checkBox:checked {
-    background-color: #005FFD;
-    border: 2px solid #0049D9;
-    appearance: auto;
+/*.checkBox:checked {*/
+/*    background-color: #005FFD;*/
+/*    border: 2px solid #0049D9;*/
+/*    appearance: auto;*/
+/*}*/
+
+
+.checkBox {
+    -webkit-appearance: none;
+    position: absolute;
 }
 
-/*.checkmark:after {*/
-/*    content: "";*/
-/*    position: absolute;*/
-/*    display: none;*/
-/*}*/
+.label {
+    float: right;
+    margin-right: 18px;
+    cursor: pointer;
+}
 
-/*!* Show the checkmark when checked *!*/
-/*.container input:checked ~ .checkmark:after {*/
-/*    display: block;*/
-/*}*/
+.checkmark:before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+
+
+    position: absolute;
+    box-sizing: border-box;
+
+    border: 2px solid #C1C1C1;
+    background-color: #FFFFFF;
+    z-index: 1;
+}
+
+.checkmark:after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background: url("./icons8-done.svg") no-repeat;
+    background-size: 18px 18px;
+
+    position: relative;
+    top: 2px;
+    left: 3px;
+    z-index: 2;
+
+    opacity: 0;
+
+}
+
+.checkBox:checked + .checkmark:before {
+    background-color: #005FFD;
+    border: 2px solid #0049D9;
+}
+
+.checkBox:checked + .checkmark:after {
+    opacity: 1;
+
+}
