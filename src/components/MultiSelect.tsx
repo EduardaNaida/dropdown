@@ -1,21 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
 import style from './MultiSelect.module.css'
 import flag from '../image/germanFlag.svg'
-import {Search} from "./Search";
+import { Search } from './Search'
 
-export type MultiSelectType = {
-  id: number,
+export interface MultiSelectType {
+  id: number
   label: string
 }
 
-type SuperSelectPropsType = {
+interface SuperSelectPropsType {
   value: MultiSelectType[]
   options: any[]
   onChangeOption: (option: MultiSelectType[]) => void
 }
 
-export const MultiSelect: React.FC<SuperSelectPropsType> = ({options, onChangeOption, value}) => {
-
+export const MultiSelect: React.FC<SuperSelectPropsType> = ({ options, onChangeOption, value }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [updateState, setUpdateState] = useState<MultiSelectType[]>(options)
 
@@ -23,13 +22,12 @@ export const MultiSelect: React.FC<SuperSelectPropsType> = ({options, onChangeOp
 
   const onChangeOptions = (option: MultiSelectType[]) => {
     console.log(option)
-    if (!option.length) {
+    if (option.length === 0) {
       setUpdateState([])
     } else {
       setUpdateState(option)
     }
   }
-
 
   const removeItem = (id: number) => {
     const option = value.filter(option => option.id !== id)
@@ -44,42 +42,44 @@ export const MultiSelect: React.FC<SuperSelectPropsType> = ({options, onChangeOp
     }
   }
 
-  const isOptionSelected = (option: MultiSelectType) => {
-    return value.includes(option)
-  }
+  const isOptionSelected = (option: MultiSelectType): boolean => value.includes(option)
 
-  const mappedOption: any[] = value ? value.map((value, index) => (
-      <div key={index} className={style.labelButton} onClick={e => {
-        e.stopPropagation()
-      }}>
-        <div className={style.selectedOption}>{value.label}</div>
-        <div className={style.removeItem} onClick={e => {
-          removeItem(value.id)
-        }}></div>
-      </div>))
-    : []
-
+  const mappedOption: any[] = value.map((value, index) => (
+    <div key={index} className={style.labelButton} onClick={e => {
+      e.stopPropagation()
+    }}>
+      <div className={style.selectedOption}>{value.label}</div>
+      <div className={style.removeItem} onClick={e => {
+        removeItem(value.id)
+      }}></div>
+    </div>))
 
   return (
     <div className={style.container}>
       <div className={style.selectedBlock}
-           onClick={e => setIsOpen(prevState => !prevState)}
+           onClick={e => {
+             setIsOpen(prevState => !prevState)
+           }}
       >
         <div className={style.selectedItemBlock}>
           {mappedOption}
         </div>
         <button
           className={`${style.btn} ${isOpen ? style.btnUp : style.btnDown}`}
-          onClick={() => setIsOpen(prevState => !prevState)}>
+          onClick={() => {
+            setIsOpen(prevState => !prevState)
+          }}>
         </button>
       </div>
 
       <div className={`${style.selectList} ${isOpen ? style.showOptions : ''}`}>
 
-        <Search state={options} onChange={(event) => onChangeOptions(event)}/>
+        <Search state={options} onChange={(event) => {
+          onChangeOptions(event)
+        }}/>
 
         <ul className={`${style.options}`} id="multiSelect">
-          {updateState ? updateState.map((state, index) => (
+          {updateState.map((state, index) => (
             <li
               key={index}
               value={state.id}
@@ -102,9 +102,9 @@ export const MultiSelect: React.FC<SuperSelectPropsType> = ({options, onChangeOp
                   <span className={style.checkmark}></span>
                 </label>
               </div>
-            </li>)) : ''}
+            </li>))}
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
