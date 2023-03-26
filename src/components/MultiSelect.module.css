@@ -19,6 +19,7 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+    min-height: 40px;
 }
 
 .labelButton {
@@ -34,14 +35,6 @@
 
 .selectedOption {
 }
-
-/*.labelButton:after {*/
-/*    display: flex;*/
-/*    padding-left: 10px;*/
-/*    font-size: 16px;*/
-/*    content: "\00d7";*/
-/*    cursor: pointer;*/
-/*}*/
 
 .removeItem:after {
     color: black;
@@ -92,20 +85,17 @@
 }
 
 .searchInput {
+    display: block;
     box-sizing: border-box;
+
     background: #F4F4F4;
     border-radius: 10px;
     border: none;
     padding: 10px;
     width: 100%;
+    /*background: url("./iconsSearch.svg") no-repeat 10px center;*/
 }
 
-/*input.empty {*/
-/*    font-family: "FontAwesome", sans-serif;*/
-/*    font-style: normal;*/
-/*    font-weight: normal;*/
-/*    text-decoration: inherit;*/
-/*}*/
 
 .options {
     margin: 0;
@@ -139,44 +129,6 @@
     width: 100%;
     box-sizing: border-box;
 }
-
-/*.checkBox {*/
-/*    display: none;*/
-/*    -webkit-appearance: none;*/
-/*    position: absolute;*/
-/*}*/
-
-/*.checkBox {*/
-/*    float: right;*/
-/*    margin-right: 18px;*/
-/*    border-radius: 6px;*/
-/*    width: 24px;*/
-/*    height: 24px;*/
-
-/*    border: 2px solid #C1C1C1;*/
-
-/*    outline: none;*/
-/*    appearance: none;*/
-/*    background-color: #FFFFFF;*/
-/*}*/
-
-
-/*.checkmark {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    height: 25px;*/
-/*    width: 25px;*/
-/*    background-color: #b42222;*/
-
-/*    border-radius: 15px;*/
-/*}*/
-
-/*.checkBox:checked {*/
-/*    background-color: #005FFD;*/
-/*    border: 2px solid #0049D9;*/
-/*    appearance: auto;*/
-/*}*/
 
 
 .checkBox {
