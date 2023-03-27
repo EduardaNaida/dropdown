@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/dropdown/static/css/main.179197d3.css",
+    "main.css": "/dropdown/static/css/main.f7b2f914.css",
     "main.js": "/dropdown/static/js/main.e384076b.js",
     "static/media/es.svg": "/dropdown/static/media/es.e3db1b5f8a2ec8ae87640f32237c01b3.svg",
     "static/media/iconsSearch.svg": "/dropdown/static/media/iconsSearch.3d968571c14684cc5893.svg",
-    "static/media/icons8-done.svg": "/dropdown/static/media/icons8-done.f38da21fb6f34834cb76.svg",
+    "static/media/iconDone.svg": "/dropdown/static/media/iconDone.f38da21fb6f34834cb76.svg",
     "index.html": "/dropdown/index.html",
     "static/media/gb.svg": "/dropdown/static/media/gb.516897fd3988e35032b772b026a19f75.svg",
     "static/media/it.svg": "/dropdown/static/media/it.08db2cd122d5f99494dd35c2cfb10784.svg",
     "static/media/germanFlag.svg": "/dropdown/static/media/germanFlag.251f80c01a359e2031996ceb53e4190f.svg",
     "static/media/ru.svg": "/dropdown/static/media/ru.7e04b988972d41f5c36902a31b818119.svg",
     "static/media/pl.svg": "/dropdown/static/media/pl.2b5541c54505328dbc1b264a72369d23.svg",
-    "main.179197d3.css.map": "/dropdown/static/css/main.179197d3.css.map",
+    "main.f7b2f914.css.map": "/dropdown/static/css/main.f7b2f914.css.map",
     "main.e384076b.js.map": "/dropdown/static/js/main.e384076b.js.map"
   },
   "entrypoints": [
-    "static/css/main.179197d3.css",
+    "static/css/main.f7b2f914.css",
     "static/js/main.e384076b.js"
   ]
 }
