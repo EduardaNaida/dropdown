@@ -3,7 +3,7 @@ import './App.css'
 import { MultiSelect, type MultiSelectType } from './components/multiselect/MultiSelect'
 
 const state = [
-  { id: 0, label: 'Русский', icon: '/icons/flags/ru.svg' },
+  { id: 0, label: 'Русский', icon: '../../../public/icons/flags/ru.svg' },
   { id: 1, label: 'Английский', icon: '/icons/flags/gb.svg' },
   { id: 2, label: 'Испанский', icon: '/icons/flags/es.svg' },
   { id: 3, label: 'Немецкий', icon: '/icons/flags/germanFlag.svg' },
