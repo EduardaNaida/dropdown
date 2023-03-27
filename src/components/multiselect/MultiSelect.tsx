@@ -1,27 +1,24 @@
 import React, { useState } from 'react'
 import style from './MultiSelect.module.css'
-import flag from '../image/germanFlag.svg'
-import { Search } from './Search'
+import { Search } from '../search/Search'
 
 export interface MultiSelectType {
   id: number
   label: string
+  icon: string
 }
 
 interface SuperSelectPropsType {
   value: MultiSelectType[]
-  options: any[]
-  onChangeOption: (option: MultiSelectType[]) => void
+  options: MultiSelectType[]
+  onChangeValue: (option: MultiSelectType[]) => void
 }
 
-export const MultiSelect: React.FC<SuperSelectPropsType> = ({ options, onChangeOption, value }) => {
+export const MultiSelect: React.FC<SuperSelectPropsType> = ({ options, onChangeValue, value }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [updateState, setUpdateState] = useState<MultiSelectType[]>(options)
 
-  console.log(updateState)
-
-  const onChangeOptions = (option: MultiSelectType[]) => {
-    console.log(option)
+  const onChangeOptions = (option: MultiSelectType[]): void => {
     if (option.length === 0) {
       setUpdateState([])
     } else {
@@ -29,16 +26,16 @@ export const MultiSelect: React.FC<SuperSelectPropsType> = ({ options, onChangeO
     }
   }
 
-  const removeItem = (id: number) => {
+  const removeItem = (id: number): void => {
     const option = value.filter(option => option.id !== id)
-    onChangeOption([...option])
+    onChangeValue([...option])
   }
 
-  const selectItem = (option: MultiSelectType) => {
+  const selectItem = (option: MultiSelectType): void => {
     if (value.includes(option)) {
-      onChangeOption([...value.filter(item => item.id !== option.id)])
+      onChangeValue([...value.filter(item => item.id !== option.id)])
     } else {
-      onChangeOption([...value, option])
+      onChangeValue([...value, option])
     }
   }
 
@@ -66,7 +63,8 @@ export const MultiSelect: React.FC<SuperSelectPropsType> = ({ options, onChangeO
         </div>
         <button
           className={`${style.btn} ${isOpen ? style.btnUp : style.btnDown}`}
-          onClick={() => {
+          onClick={e => {
+            e.stopPropagation()
             setIsOpen(prevState => !prevState)
           }}>
         </button>
@@ -85,7 +83,7 @@ export const MultiSelect: React.FC<SuperSelectPropsType> = ({ options, onChangeO
               value={state.id}
               className={style.option}
             >
-              <img className={style.flags} src={flag} alt="img"/>
+              <img className={style.flags} src={state.icon} alt="img"/>
               {state.label}
               <div className={style.checkBoxBlock}>
                 <label className={style.label}>

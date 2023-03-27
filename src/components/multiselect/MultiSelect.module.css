@@ -12,6 +12,7 @@
     border: 1px solid #C1C1C1;
     border-radius: 10px;
     align-items: center;
+    cursor: pointer;
 }
 
 .selectedItemBlock {
@@ -29,18 +30,26 @@
     padding: 6px 12px;
     margin: 7px 4px 9px 10px;
     border-radius: 8px;
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
     font-size: 12px;
     line-height: 12px;
+
+    color: #333333;
 }
 
 .selectedOption {
+
 }
 
 .removeItem:after {
-    color: black;
-    display: flex;
+    color: #333333;
+    display: block;
     padding-left: 10px;
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 12px;
     content: "\00d7";
     cursor: pointer;
 }
@@ -80,23 +89,6 @@
     display: block;
 }
 
-.searchInputBlock {
-    padding: 16px 16px 0 16px;
-}
-
-.searchInput {
-    display: block;
-    box-sizing: border-box;
-
-    background: #F4F4F4;
-    border-radius: 10px;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    /*background: url("./iconsSearch.svg") no-repeat 10px center;*/
-}
-
-
 .options {
     margin: 0;
     padding: 0;
@@ -116,6 +108,7 @@
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
+    cursor: default;
 }
 
 .flags {
@@ -164,7 +157,7 @@
     width: 24px;
     height: 24px;
 
-    background: url("./icons8-done.svg") no-repeat;
+    background: url("../../../public/icons/icons8-done.svg") no-repeat;
     background-size: 18px 18px;
 
     position: relative;

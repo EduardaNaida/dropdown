@@ -1,6 +1,6 @@
 import React, { type ChangeEvent, type FC, useEffect, useState } from 'react'
-import style from './MultiSelect.module.css'
-import { type MultiSelectType } from './MultiSelect'
+import style from './Search.module.css'
+import { type MultiSelectType } from '../multiselect/MultiSelect'
 
 interface SearchType {
   state: MultiSelectType[]
@@ -10,7 +10,7 @@ interface SearchType {
 export const Search: FC<SearchType> = ({ state, onChange }) => {
   const [searchItem, setSearchItem] = useState<MultiSelectType[]>(state)
 
-  const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  const searchHandler = (e: ChangeEvent<HTMLInputElement>): void => {
     if (e.currentTarget.value === '') {
       setSearchItem(state)
     } else {
@@ -25,13 +25,14 @@ export const Search: FC<SearchType> = ({ state, onChange }) => {
 
   return (
     <div className={style.searchInputBlock}>
-      {/* <i className="fa fa-search icon-search" aria-hidden="true"></i> */}
-      <input
-        className={style.searchInput}
-        type="text"
-        placeholder='Search'
-        onChange={searchHandler}
-      />
+      <div className={style.searchInputBox}>
+        <input
+          placeholder='Search'
+          className={style.searchInput}
+          type="text"
+          onChange={searchHandler}
+        />
+      </div>
     </div>
   )
 }
